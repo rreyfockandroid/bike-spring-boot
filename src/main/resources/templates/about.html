@@ -13,18 +13,16 @@
 	    	<input type="submit" value="Sign Out"/>
 	    </form>
 	</div>
-	<div class="container">
-
-		<div class="starter-template">
-			<h1>Strona o rowerach</h1>
-			<h2>
-				<span th:text="'Message: ' + ${message}"></span>
-			</h2>
-		</div>
-
-	</div>
-	<!-- /.container -->
-
+	This is tutorial spring boot
+	<div>Bikes list:</div>
+	<ul th:each="bike : ${bikes}">
+		<li th:text="${bike}"></li>
+	</ul>
+	<div>Bikes2 list:</div>
+	<ul th:each="bike : ${bikes}">
+		<li th:text="${bike}"></li>
+	</ul>
+	
 	<div th:replace="layout/footer::footer" />
 </body>
 </html>

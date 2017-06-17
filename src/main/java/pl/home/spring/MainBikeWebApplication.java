@@ -8,5 +8,4 @@ public class MainBikeWebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MainBikeWebApplication.class, args);
 	}
-
 }

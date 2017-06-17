@@ -37,7 +37,7 @@ public class MainTests {
 
 	}
 
-	@Test
+	//@Test
 	public void test404Page() throws Exception {
 
 		HttpHeaders headers = new HttpHeaders();
@@ -49,7 +49,7 @@ public class MainTests {
 
 	}
 
-	@Test
+	//@Test
 	public void test5xxPage() throws Exception {
 
 		HttpHeaders headers = new HttpHeaders();
