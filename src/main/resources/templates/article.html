@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Welcome page - mvn spring-boot:run</title>
+	<div th:replace="layout/header :: header-css"/>
+</head>
+<body>
+	<div th:replace="layout/header::header"/>
+
+	<div th:if="${#httpServletRequest.remoteUser}">
+		<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+	    <form th:action="@{/logout}" method="post">
+	    	<input type="submit" value="Sign Out"/>
+	    </form>
+	</div>
+	<div class="container">
+
+		<div class="starter-template">
+			<h1>Artykuły</h1>
+			<ul th:each="article : ${allArticles}">
+				<li>
+					<span th:text="${article.articleId}" /> <span th:text="${article.title}" /> - <span th:text="${article.category}" />
+				</li>
+			</ul>
+		</div>
+		
+		<div class="starter-template">
+			<h1>Artykuły</h1>
+			<ul th:each="article : ${allSecondaryArticles}">
+				<li>
+					<span th:text="${article.articleId}" /> <span th:text="${article.title}" /> - <span th:text="${article.category}" />
+				</li>
+			</ul>
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+	<divv th:replace="layout/footer::footer" />
+</body>
+</html>
