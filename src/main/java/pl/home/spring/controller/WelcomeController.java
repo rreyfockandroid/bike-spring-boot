@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.home.spring.bean.BeanFactory;
 import pl.home.spring.bean.BikesCollectionBean;
 
+
 @Controller
 public class WelcomeController {
 	
@@ -22,7 +23,7 @@ public class WelcomeController {
 	private BikesCollectionBean bikesCollection;
 	@Autowired
 	private BeanFactory beanFactory;
-	
+		
 	@Value("${welcome.message:test}")
 	private String message = "Hello World";
 	private String messCannondale = "Cannondale are probably the best bikes on the world";
@@ -60,11 +61,11 @@ public class WelcomeController {
 		return "login";
 	}
 	
-	@RequestMapping("/5xx")
-	public void ServiceUnavailable() {
-		System.out.println("Exception");
-		throw new RuntimeException("ABC");
-	}
+	//@RequestMapping("/5xx")
+//	public void ServiceUnavailable() {
+//		System.out.println("Exception");
+//		throw new RuntimeException("ABC");
+//	}
 	
 	@RequestMapping("/404")
 	public void Error404() {

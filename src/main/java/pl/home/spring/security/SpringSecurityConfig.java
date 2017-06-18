@@ -15,7 +15,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private AccessDeniedHandler accessDeniedHandler;
+    private MyAccessDeniedHandler accessDeniedHandler;
 
     // roles admin allow to access /admin/**
     // roles user allow to access /user/**
@@ -25,7 +25,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/welcome", "/about").permitAll()
+                .antMatchers("/", "/welcome", "/about", "/article/**").permitAll()
                 .antMatchers("/bikes/**").hasAnyRole("ADMIN")
                 .antMatchers("/user/**").hasAnyRole("USER")
                 .anyRequest().authenticated()
